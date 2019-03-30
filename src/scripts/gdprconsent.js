@@ -3,8 +3,11 @@ import Sidebar from 'sidebar';
 
 class GDPRConsent {
   constructor() {
-      this.config = new Config();
-      this.sidebar = new Sidebar();
+    const body = document.getElementsByName('body');
+    body.append('<div id="'+ Sidebar.divId +'">');
+
+    this.config = new Config();
+    this.sidebar = new Sidebar();
   }
 }
 

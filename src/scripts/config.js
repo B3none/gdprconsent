@@ -5,8 +5,8 @@ const defaultConfig = {
 
 class Config {
   constructor() {
-    if (localStorage.getItem(Config.getStorageKey()) === null) {
-      this.set(Config.getDefaultConfig());
+    if (localStorage.getItem(storageKey) === null) {
+      this.set(defaultConfig);
     }
   }
 
@@ -15,7 +15,7 @@ class Config {
    *
    * @return {string}
    */
-  static get getStorageKey() {
+  static get storageKey() {
     return storageKey;
   }
 
@@ -24,7 +24,7 @@ class Config {
    *
    * @return {object}
    */
-  static get getDefaultConfig() {
+  static get defaultConfig() {
     return defaultConfig;
   }
 
@@ -34,7 +34,7 @@ class Config {
    * @returns {object}
    */
   get() {
-    const stored = localStorage.getItem(Config.getStorageKey);
+    const stored = localStorage.getItem(storageKey);
     return JSON.parse(stored);
   }
 
@@ -45,7 +45,7 @@ class Config {
    * @return {void}
    */
   set(newConfig) {
-    localStorage.setItem(Config.getStorageKey, JSON.stringify(newConfig));
+    localStorage.setItem(storageKey, JSON.stringify(newConfig));
   }
 
   /**
@@ -64,7 +64,7 @@ class Config {
    * @return {void}
    */
   clear() {
-    this.set(Config.getDefaultConfig);
+    this.set(defaultConfig);
   }
 }
 
