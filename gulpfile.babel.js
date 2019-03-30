@@ -18,7 +18,7 @@ const paths = {
   }
 };
 
-export const clean = () => del(['assets']);
+export const clean = () => del(['build']);
 
 export function styles() {
   return gulp.src(paths.styles.src)
@@ -49,4 +49,4 @@ export {watchFiles as watch};
 
 const build = gulp.series(clean, gulp.parallel(styles, scripts));
 
-export default build;
+export default watchFiles;
