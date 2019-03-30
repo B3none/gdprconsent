@@ -4,6 +4,7 @@
   "description": "A highly customisable GDPR consent solution.",
   "devDependencies": {
     "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-classes": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/register": "^7.4.0",
     "del": "^4.0.0",
@@ -12,6 +13,7 @@
     "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2"
   },
   "author": "Alex Blackham | B3none",
@@ -23,8 +25,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/b3none/gdprconsent.git"
-  },
-  "dependencies": {
-    "gulp-sass": "^4.0.2"
   }
 }
