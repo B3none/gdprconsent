@@ -10,10 +10,20 @@ class Config {
     }
   }
 
+  /**
+   * Get the localStorage key.
+   *
+   * @return {string}
+   */
   static get getStorageKey() {
     return storageKey;
   }
 
+  /**
+   * Get the default config.
+   *
+   * @return {object}
+   */
   static get getDefaultConfig() {
     return defaultConfig;
   }
@@ -24,7 +34,7 @@ class Config {
    * @returns {object}
    */
   get() {
-    const stored = localStorage.getItem(Config.getStorageKey());
+    const stored = localStorage.getItem(Config.getStorageKey);
     return JSON.parse(stored);
   }
 
@@ -35,11 +45,11 @@ class Config {
    * @return {void}
    */
   set(newConfig) {
-    localStorage.setItem(Config.getStorageKey(), JSON.stringify(newConfig));
+    localStorage.setItem(Config.getStorageKey, JSON.stringify(newConfig));
   }
 
   /**
-   * Updates the current
+   * Updates the current config.
    *
    * @param {object} newConfig
    * @return {void}
@@ -49,12 +59,12 @@ class Config {
   }
 
   /**
-   * Clears the config altogether
+   * Sets the config back to the default.
    *
    * @return {void}
    */
   clear() {
-    this.set(Config.getDefaultConfig());
+    this.set(Config.getDefaultConfig);
   }
 }
 
