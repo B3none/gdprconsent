@@ -1,2 +1,2 @@
-# gdprconsent
-GDPR consent tool.
+# GDPR Consent
+A highly customisable GDPR consent solution.
