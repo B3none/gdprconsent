@@ -1,3 +1,9 @@
-const test = () => {
-    console.log('this is a test');
-};
+import Config from 'config'
+
+class GDPRConsent {
+  constructor(config) {
+      this.config = config;
+  }
+
+
+}
