@@ -1,7 +1,7 @@
 # GDPR Consent
 A super flexible GDPR consent solution that, if implemented correctly, will make your site GDPR compliant.
 
-# Custom settings
+# Customisable settings
 This project allows you to specify custom settings.
 To declare these settings you need to put a script tag above the library include containing the following:
 ```html
