@@ -15,6 +15,12 @@ const styles = {
     color: "#757575",
     textDecoration: "none"
   },
+  sidebarDescription: {
+    margin: 0,
+    display: "block",
+    color: "#757575",
+    textDecoration: "none"
+  },
   divider: {
     margin: "8px 0",
     height: 1,
@@ -45,12 +51,9 @@ const Content = props => {
   return (
     <Header title="GDPR Consent Settings" style={style}>
       <div style={styles.content}>
-        <a style={styles.sidebarLink}>
-          Home
-        </a>
-        <a style={styles.sidebarLink}>
-          Responsive Example
-        </a>
+        <p style={styles.sidebarDescription}>
+          This is the panel where you've got complete control to decide who we do and don't send your data to.
+        </p>
         <div style={styles.divider} />
         {links}
       </div>
