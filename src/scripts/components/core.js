@@ -31,7 +31,7 @@ class Core extends Component {
       <Sidebar
         // SIDEBAR TITLE
         sidebar={
-          <h2 style={{"text-align": "center", "color": userConfig.sidebarTitleColour || "rgba(255,255,255,0.75)"}}>
+          <h2 style={{"text-align": "center", "color": userConfig.sidebarTitleTextColour || "rgba(255,255,255,0.75)"}}>
             GDPR Consent
           </h2>
         }
