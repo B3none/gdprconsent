@@ -4,8 +4,11 @@
   "description": "A highly customisable GDPR consent solution.",
   "devDependencies": {
     "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/register": "^7.4.0",
+    "amd-optimize": "^0.6.1",
+    "browser-sync": "^2.26.3",
     "del": "^4.0.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
@@ -14,7 +17,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "browser-sync": "^2.26.3",
+    "path": "^0.12.7",
     "webpack": "^4.29.6",
     "webpack-dev-middleware": "^3.6.1",
     "webpack-hot-middleware": "^2.24.3"

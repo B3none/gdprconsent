@@ -1,5 +1,5 @@
-import Config from 'config'
-import Sidebar from 'sidebar';
+import Config from './config'
+import Sidebar from './sidebar';
 
 class GDPRConsent {
   constructor() {

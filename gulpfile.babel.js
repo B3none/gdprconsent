@@ -8,7 +8,7 @@ import cleanCSS from 'gulp-clean-css';
 import del from 'del';
 import Browser from 'browser-sync';
 import webpack from 'webpack';
-import {config as webpackConfig} from './webpack.config.babel';
+import {config as webpackConfig, scripts as webpackScripts} from './webpack.config.babel';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
@@ -39,11 +39,26 @@ export function styles() {
 }
 
 export function scripts() {
+  // webpackScripts();
   return gulp.src(paths.scripts.src, {sourcemaps: true})
     .pipe(babel())
     .pipe(uglify())
     .pipe(concat('gdprconsent.min.js'))
     .pipe(gulp.dest(paths.scripts.dest));
+}
+
+export function server() {
+  let config = {
+    server: 'examples',
+    middleware: [
+      webpackDevMiddleware(bundler, { /* options */ }),
+      webpackHotMiddleware(bundler)
+    ],
+  };
+
+  browser.init(config);
+
+  gulp.watch('build/gdprconsent.min.js', () => browser.reload());
 }
 
 function watchFiles() {
