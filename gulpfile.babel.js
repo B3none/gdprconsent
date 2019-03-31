@@ -18,16 +18,17 @@ const paths = {
   }
 };
 
-export const clean = () => del(['build']);
+export const clean = (subDirectory = false) => del(['build' + (subDirectory ? '/' + subDirectory : '')]);
 
 export function styles() {
   return gulp.src(paths.styles.src)
     .pipe(sass())
     .pipe(cleanCSS())
-    .pipe(rename({
-      basename: 'gdprconsent',
-      suffix: '.min'
-    }))
+    // .pipe(rename({
+    //   basename: 'gdprconsent',
+    //   suffix: '.min'
+    // }))
+    .pipe(concat('gdprconsent.min.css'))
     .pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -39,8 +40,8 @@ export function scripts() {
 }
 
 function watchFiles() {
-  gulp.watch(paths.scripts.src, gulp.parallel(clean, scripts));
-  gulp.watch(paths.styles.src, gulp.parallel(clean, styles));
+  gulp.watch(paths.scripts.src, gulp.parallel(() => clean('scripts'), scripts));
+  gulp.watch(paths.styles.src, gulp.parallel(() => clean('styles'), styles));
 }
 
 export {watchFiles as watch};
