@@ -24,10 +24,6 @@ export function styles() {
   return gulp.src(paths.styles.src)
     .pipe(sass())
     .pipe(cleanCSS())
-    // .pipe(rename({
-    //   basename: 'gdprconsent',
-    //   suffix: '.min'
-    // }))
     .pipe(concat('gdprconsent.min.css'))
     .pipe(gulp.dest(paths.styles.dest));
 }
