@@ -8,7 +8,7 @@ import cleanCSS from 'gulp-clean-css';
 import del from 'del';
 import Browser from 'browser-sync';
 import webpack from 'webpack';
-import {config as webpackConfig, scripts as webpackScripts} from './webpack.config.babel';
+import webpackConfig from './webpack.config';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 

@@ -20,7 +20,8 @@
     "path": "^0.12.7",
     "webpack": "^4.29.6",
     "webpack-dev-middleware": "^3.6.1",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-stream": "^5.2.1"
   },
   "author": "Alex Blackham | B3none",
   "homepage": "https://github.com/b3none",
