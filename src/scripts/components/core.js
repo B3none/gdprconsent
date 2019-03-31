@@ -21,8 +21,6 @@ class Core extends Component {
   }
 
   onSetSidebarOpen(shouldOpen) {
-    console.log('called');
-
     this.setState({
       sidebarOpen: shouldOpen
     });
