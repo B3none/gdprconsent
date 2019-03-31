@@ -4,7 +4,6 @@ import Widget from './sidebar/widget';
 import Content from './sidebar/content';
 
 const divId = 'gdprconsent';
-const userConfig = window.gdprconsent || {};
 
 class Core extends Component {
   static get divId() {
@@ -38,13 +37,6 @@ class Core extends Component {
 
         open={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen}
-
-        styles={{
-          sidebar: {
-            width: "300px",
-            background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
-          }
-        }}
       >
         <Widget click={this.onSetSidebarOpen} />
       </Sidebar>

@@ -1,9 +1,13 @@
 import React from "react";
 import Header from "./header";
 
+const userConfig = window.gdprconsent || {};
+
 const styles = {
   sidebar: {
-    height: "100%"
+    width: "300px",
+    height: "100%",
+    background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
   },
   sidebarLink: {
     display: "block",

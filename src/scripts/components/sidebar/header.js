@@ -9,7 +9,6 @@ const styles = {
     fontWeight: 300
   },
   header: {
-    backgroundColor: "#03a9f4",
     color: userConfig.sidebarTitleTextColour || "rgba(255,255,255,0.75)",
     padding: "16px",
     fontSize: "1.5em"
