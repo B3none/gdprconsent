@@ -1,16 +1,11 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
-import babel from 'gulp-babel';
 import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import cleanCSS from 'gulp-clean-css';
 import del from 'del';
-import Browser from 'browser-sync';
-import webpack from 'webpack';
+import webpack from 'webpack-stream';
 import webpackConfig from './webpack.config';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
 
 const paths = {
   styles: {
@@ -23,8 +18,6 @@ const paths = {
   }
 };
 
-const browser = Browser.create();
-const bundler = webpack(webpackConfig);
 export const clean = () => del(['build']);
 
 export function styles() {
@@ -39,26 +32,12 @@ export function styles() {
 }
 
 export function scripts() {
-  // webpackScripts();
   return gulp.src(paths.scripts.src, {sourcemaps: true})
-    .pipe(babel())
-    .pipe(uglify())
+    // .pipe(babel())
+    // .pipe(uglify())
+    .pipe(webpack(webpackConfig))
     .pipe(concat('gdprconsent.min.js'))
     .pipe(gulp.dest(paths.scripts.dest));
-}
-
-export function server() {
-  let config = {
-    server: 'examples',
-    middleware: [
-      webpackDevMiddleware(bundler, { /* options */ }),
-      webpackHotMiddleware(bundler)
-    ],
-  };
-
-  browser.init(config);
-
-  gulp.watch('build/gdprconsent.min.js', () => browser.reload());
 }
 
 function watchFiles() {
