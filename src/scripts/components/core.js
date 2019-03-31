@@ -19,9 +19,9 @@ class Core extends Component {
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
 
-  onSetSidebarOpen(isOpen) {
+  onSetSidebarOpen(shouldOpen = true) {
     this.setState({
-      sidebarOpen: isOpen
+      sidebarOpen: shouldOpen
     });
   }
 
@@ -34,7 +34,7 @@ class Core extends Component {
           onSetOpen={this.onSetSidebarOpen}
           styles={{ sidebar: { background: "white" } }}
         >
-          <Widget onClick={() => this.onSetSidebarOpen(true)} />
+          <Widget click={this.onSetSidebarOpen} />
         </Sidebar>
       </React.Fragment>
     );
