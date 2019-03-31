@@ -5,7 +5,9 @@
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
+    "babel-loader": "^8.0.5",
     "del": "^4.0.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",
@@ -13,6 +15,9 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "path": "^0.12.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack-stream": "^5.2.1"
   },
   "author": "Alex Blackham | B3none",
