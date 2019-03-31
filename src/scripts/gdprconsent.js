@@ -1,7 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Config from './config'
-import ReactDOM from "react-dom";
-import React from "react";
-import Core from "./components/core";
+import Core from './components/core';
 
 new class GDPRConsent {
   constructor() {

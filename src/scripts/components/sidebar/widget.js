@@ -9,7 +9,7 @@ class Widget extends Component {
         ].join(' ')}
         title={'GDPR Consent Settings'}
 
-        onClick={() => this.props.click(true)}
+        onClick={() => console.log('clicked', this.props.click) && this.props.click(true)}
       >
         &#9881;
       </button>

@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
 import concat from 'gulp-concat';
-import rename from 'gulp-rename';
 import cleanCSS from 'gulp-clean-css';
 import del from 'del';
 import webpack from 'webpack-stream';

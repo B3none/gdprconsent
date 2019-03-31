@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Sidebar from 'react-sidebar';
-import Widget from './widget';
+import Widget from './sidebar/widget';
+import Content from './sidebar/content';
 
-const divId = 'gdprconsent-core';
+const divId = 'gdprconsent';
 const userConfig = window.gdprconsent || {};
 
 class Core extends Component {
@@ -27,17 +28,14 @@ class Core extends Component {
   }
 
   render() {
+    const sidebar = <Content />;
+
     return(
       <Sidebar
-        // SIDEBAR TITLE
-        sidebar={
-          <h2 style={{"text-align": "center", "color": userConfig.sidebarTitleTextColour || "rgba(255,255,255,0.75)"}}>
-            GDPR Consent
-          </h2>
-        }
+        sidebar={sidebar}
 
-        open={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen}
+
         styles={{
           sidebar: {
             width: "300px",
