@@ -3,7 +3,7 @@ import Sidebar from './components/sidebar';
 
 const userConfig = window.gdprconsent;
 
-class GDPRConsent {
+new class GDPRConsent {
   constructor() {
     this.config = new Config();
     this.sidebar = new Sidebar();
@@ -15,6 +15,4 @@ class GDPRConsent {
       window.stop();
     }
   }
-}
-
-new GDPRConsent();
+};
