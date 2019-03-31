@@ -19,7 +19,7 @@ class Core extends Component {
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
 
-  onSetSidebarOpen(shouldOpen = true) {
+  onSetSidebarOpen(shouldOpen) {
     this.setState({
       sidebarOpen: shouldOpen
     });
