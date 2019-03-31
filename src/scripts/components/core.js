@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Widget from './widget';
-import Sidebar from './sidebar';
+import Sidebar from 'react-sidebar';
 
 const divId = 'gdprconsent-core';
 
@@ -9,12 +9,33 @@ class Core extends Component {
     return divId;
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sidebarOpen: false
+    };
+
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+  }
+
+  onSetSidebarOpen(isOpen) {
+    this.setState({
+      sidebarOpen: isOpen
+    });
+  }
+
   render() {
     return(
       <React.Fragment>
-        <Widget />
-
-        <Sidebar />
+        <Sidebar
+          sidebar={<b>GDPR consent</b>}
+          open={this.state.sidebarOpen}
+          onSetOpen={this.onSetSidebarOpen}
+          styles={{ sidebar: { background: "white" } }}
+        >
+          <Widget onClick={() => this.onSetSidebarOpen(true)} />
+        </Sidebar>
       </React.Fragment>
     );
   }
