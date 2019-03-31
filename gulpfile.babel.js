@@ -33,16 +33,14 @@ export function styles() {
 
 export function scripts() {
   return gulp.src(paths.scripts.src, {sourcemaps: true})
-    // .pipe(babel())
-    // .pipe(uglify())
     .pipe(webpack(webpackConfig))
     .pipe(concat('gdprconsent.min.js'))
     .pipe(gulp.dest(paths.scripts.dest));
 }
 
 function watchFiles() {
-  gulp.watch(paths.scripts.src, scripts);
-  gulp.watch(paths.styles.src, styles);
+  gulp.watch(paths.scripts.src, gulp.parallel(clean, scripts));
+  gulp.watch(paths.styles.src, gulp.parallel(clean, styles));
 }
 
 export {watchFiles as watch};

@@ -11,9 +11,11 @@ class Sidebar extends Component {
   constructor(props) {
     super(props);
 
-    let sidebar = document.createElement('div');
-    sidebar.id = Sidebar.divId;
-    document.body.appendChild(sidebar);
+    if (document.getElementById(divId) === null) {
+      let sidebar = document.createElement('div');
+      sidebar.id = Sidebar.divId;
+      document.body.appendChild(sidebar);
+    }
 
     ReactDOM.render(<Sidebar />, document.getElementById(divId));
   }
