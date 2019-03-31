@@ -22,6 +22,8 @@ class Core extends Component {
   }
 
   onSetSidebarOpen(shouldOpen) {
+    console.log('called');
+
     this.setState({
       sidebarOpen: shouldOpen
     });
@@ -34,6 +36,7 @@ class Core extends Component {
       <Sidebar
         sidebar={sidebar}
 
+        open={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen}
 
         styles={{

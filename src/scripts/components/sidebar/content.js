@@ -3,7 +3,6 @@ import Header from "./header";
 
 const styles = {
   sidebar: {
-    width: 256,
     height: "100%"
   },
   sidebarLink: {
