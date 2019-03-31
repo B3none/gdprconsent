@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Sidebar from 'react-sidebar';
-import Widget from './sidebar/widget';
-import Content from './sidebar/content';
+import Widget from './widget';
+import Content from './content';
 
 const divId = 'gdprconsent';
 
-class Core extends Component {
+class GDPRSidebar extends Component {
   static get divId() {
     return divId;
   }
@@ -42,4 +42,4 @@ class Core extends Component {
   }
 }
 
-export default Core;
+export default GDPRSidebar;

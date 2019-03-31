@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Config from './config'
-import Core from './components/core';
+import GDPRSidebar from './components/sidebar';
 
 new class GDPRConsent {
   constructor() {
     this.config = new Config();
 
-    if (document.getElementById(Core.divId) === null) {
+    if (document.getElementById(GDPRSidebar.divId) === null) {
       let sidebar = document.createElement('div');
-      sidebar.id = Core.divId;
+      sidebar.id = GDPRSidebar.divId;
       document.body.appendChild(sidebar);
     }
 
     const isNew = this.config.get().is_new;
 
-    ReactDOM.render(<Core isNew={isNew} />, document.getElementById(Core.divId));
+    ReactDOM.render(<GDPRSidebar isNew={isNew} />, document.getElementById(GDPRSidebar.divId));
 
     if (isNew) {
       console.error('New client. Do not load any proceeding scripts!');

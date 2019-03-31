@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./header";
 
 const userConfig = window.gdprconsent || {};
+const userServices = userConfig.services || [];
 
 const styles = {
   sidebar: {
@@ -38,13 +39,15 @@ const Content = props => {
     ? { ...styles.sidebar, ...props.style }
     : styles.sidebar;
 
-  const links = [];
+  const services = [];
 
-  for (let i = 0; i < 10; i++) {
-    links.push(
-      <a key={i} href="#" style={styles.sidebarLink}>
-        Mock menu item {i}
-      </a>
+  for (let i = 0; i < userServices.length; i++) {
+    services.push(
+      <div key={i} id={userServices[i].key}>
+        <a key={i} href="#" style={styles.sidebarLink}>
+          Mock menu item {i}
+        </a>
+      </div>
     );
   }
 
@@ -55,7 +58,7 @@ const Content = props => {
           This is the panel where you've got complete control to decide who we do and don't send your data to.
         </p>
         <div style={styles.divider} />
-        {links}
+        {services}
       </div>
     </Header>
   );
