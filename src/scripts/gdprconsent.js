@@ -3,13 +3,9 @@ import ReactDOM from "react-dom";
 import React from "react";
 import Core from "./components/core";
 
-const userConfig = window.gdprconsent;
-
 new class GDPRConsent {
   constructor() {
     this.config = new Config();
-
-    console.log(userConfig);
 
     if (document.getElementById(Core.divId) === null) {
       let sidebar = document.createElement('div');
