@@ -8,6 +8,12 @@ class Sidebar extends Component {
     return divId;
   }
 
+  constructor(props) {
+    super(props);
+
+    ReactDOM.render(<Sidebar />, document.getElementById(divId));
+  }
+
   render() {
     return(
       <div>
@@ -16,7 +22,5 @@ class Sidebar extends Component {
     );
   }
 }
-
-ReactDOM.render(<Sidebar />, document.getElementById(divId));
 
 export default Sidebar;
