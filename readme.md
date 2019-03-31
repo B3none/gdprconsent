@@ -1,5 +1,5 @@
 # GDPR Consent
-A highly customisable GDPR consent solution.
+A super flexible GDPR consent solution that, if implemented correctly, will make your site GDPR compliant.
 
 # Custom settings
 This project allows you to specify custom settings.
@@ -8,7 +8,18 @@ To declare these settings you need to put a script tag above the library include
 <script>
   window.gdprconsent = {
     sidebarBackground: "<ANY_CSS_COLOUR_VALUE>",
-    sidebarTitleTextColour: "<ANY_CSS_COLOUR_VALUE>"
+    sidebarTitleTextColour: "<ANY_CSS_COLOUR_VALUE>",
+    services: [
+      {
+        key: '<ANY_KEY_YOU_WANT>',
+        disable: function() {
+          // Optional code to disable the functionality
+        },
+        enable: function() {
+          // Optional code to enable the functionality
+        },
+      }
+    ]
   };
 </script>
 ```
