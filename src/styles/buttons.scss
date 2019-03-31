@@ -1,11 +1,21 @@
 .gdprconsent_widget {
   height: 75px;
   width: 75px;
-  background: blue;
+  background: rgb(33, 37, 41);
+  color: rgba(255,255,255,0.75);
   border: none;
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
   bottom: 25px;
   left: 25px;
+  font-size: 30pt;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.8);
+  }
 }

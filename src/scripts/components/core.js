@@ -41,7 +41,7 @@ class Core extends Component {
         styles={{
           sidebar: {
             width: "300px",
-            background: userConfig.sidebarBackground || "#212529"
+            background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
           }
         }}
       >

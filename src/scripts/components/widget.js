@@ -7,10 +7,11 @@ class Widget extends Component {
         className={[
           'gdprconsent_widget'
         ].join(' ')}
+        title={'GDPR Consent Settings'}
 
         onClick={() => this.props.click(true)}
       >
-        Open sidebar
+        &#9881;
       </button>
     );
   }
