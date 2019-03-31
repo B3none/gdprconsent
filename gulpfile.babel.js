@@ -6,6 +6,11 @@ import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import cleanCSS from 'gulp-clean-css';
 import del from 'del';
+import Browser from 'browser-sync';
+import webpack from 'webpack';
+import {config as webpackConfig} from './webpack.config.babel';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
 const paths = {
   styles: {
@@ -18,6 +23,8 @@ const paths = {
   }
 };
 
+const browser = Browser.create();
+const bundler = webpack(webpackConfig);
 export const clean = () => del(['build']);
 
 export function styles() {
@@ -38,7 +45,6 @@ export function scripts() {
     .pipe(concat('gdprconsent.min.js'))
     .pipe(gulp.dest(paths.scripts.dest));
 }
-
 
 function watchFiles() {
   gulp.watch(paths.scripts.src, scripts);
