@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Widget from './widget';
 import Sidebar from 'react-sidebar';
+import Widget from './widget';
 
 const divId = 'gdprconsent-core';
+const userConfig = window.gdprconsent || {};
 
 class Core extends Component {
   static get divId() {
@@ -13,7 +14,7 @@ class Core extends Component {
     super(props);
 
     this.state = {
-      sidebarOpen: false
+      sidebarOpen: this.props.isNew
     };
 
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
@@ -27,16 +28,25 @@ class Core extends Component {
 
   render() {
     return(
-      <React.Fragment>
-        <Sidebar
-          sidebar={<b>GDPR consent</b>}
-          open={this.state.sidebarOpen}
-          onSetOpen={this.onSetSidebarOpen}
-          styles={{ sidebar: { background: "white" } }}
-        >
-          <Widget click={this.onSetSidebarOpen} />
-        </Sidebar>
-      </React.Fragment>
+      <Sidebar
+        // SIDEBAR TITLE
+        sidebar={
+          <h2 style={{"text-align": "center", "color": userConfig.sidebarTitleColour || "rgba(255,255,255,0.75)"}}>
+            GDPR Consent
+          </h2>
+        }
+
+        open={this.state.sidebarOpen}
+        onSetOpen={this.onSetSidebarOpen}
+        styles={{
+          sidebar: {
+            width: "300px",
+            background: userConfig.sidebarBackground || "#212529"
+          }
+        }}
+      >
+        <Widget click={this.onSetSidebarOpen} />
+      </Sidebar>
     );
   }
 }

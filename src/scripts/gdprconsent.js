@@ -17,9 +17,11 @@ new class GDPRConsent {
       document.body.appendChild(sidebar);
     }
 
-    ReactDOM.render(<Core />, document.getElementById(Core.divId));
+    const isNew = this.config.get().is_new;
 
-    if (this.config.get().is_new) {
+    ReactDOM.render(<Core isNew={isNew} />, document.getElementById(Core.divId));
+
+    if (isNew) {
       console.error('New client. Do not load any proceeding scripts!');
       window.stop();
     }

@@ -9,7 +9,7 @@ import webpackConfig from './webpack.config';
 
 const paths = {
   styles: {
-    src: 'src/styles/**/*.less',
+    src: 'src/styles/**/*.scss',
     dest: 'build/styles/'
   },
   scripts: {
