@@ -1,5 +1,8 @@
 import React from "react";
 import Header from "./header";
+import Switch from "react-switch";
+import Config from "../../config";
+import Service from "../service";
 
 const userConfig = window.gdprconsent || {};
 const userServices = userConfig.services || [];
@@ -10,9 +13,8 @@ const styles = {
     height: "100%",
     background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
   },
-  sidebarLink: {
+  serviceTitle: {
     display: "block",
-    padding: "16px 0px",
     color: "#757575",
     textDecoration: "none"
   },
@@ -42,12 +44,9 @@ const Content = props => {
   const services = [];
 
   for (let i = 0; i < userServices.length; i++) {
+    console.log(userServices[i]);
     services.push(
-      <div key={i} id={userServices[i].key}>
-        <a key={i} href="#" style={styles.sidebarLink}>
-          Mock menu item {i}
-        </a>
-      </div>
+      <Service {...userServices[i]} />
     );
   }
 

@@ -1,4 +1,4 @@
-.gdprconsent_widget {
+.gdprconsent-widget {
   height: 75px;
   width: 75px;
   background: rgb(33, 37, 41);
@@ -18,4 +18,9 @@
   &:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.8);
   }
+}
+
+.gdprconsent-switch {
+  vertical-align: middle;
+  margin-left: 4px;
 }

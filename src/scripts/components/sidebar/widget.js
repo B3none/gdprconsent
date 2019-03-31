@@ -5,8 +5,9 @@ class Widget extends Component {
     return(
       <button
         className={[
-          'gdprconsent_widget'
+          'gdprconsent-widget'
         ].join(' ')}
+
         title={'GDPR Consent Settings'}
 
         onClick={() => this.props.click(true)}

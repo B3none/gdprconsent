@@ -10,7 +10,23 @@
     <p>Page loaded</p>
 
     <script>
-      window.gdprconsent = {a: "b", c: "d"};
+      window.gdprconsent = {
+        services: [
+          {
+            key: 'google',
+            title: 'Google Analytics',
+            description: 'We send data to google analytics to track the number of users visiting our site.',
+            disable: function() {
+              // Optional code to disable the functionality
+              console.log('disabled google')
+            },
+            enable: function() {
+              // Optional code to enable the functionality
+              console.log('enabled google')
+            },
+          }
+        ]
+      };
     </script>
     <script src="../build/scripts/gdprconsent.min.js"></script>
     <script>
