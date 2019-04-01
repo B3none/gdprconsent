@@ -13,14 +13,14 @@ To install this project you will need to include the following code before all o
     // https://github.com/b3none/gdprconsent#customisable-settings
     window.gdprconsent = {};
 </script>
-<script src="https://somecdn.com/"></script>
+<script src="https://cdn.jsdelivr.net/gh/b3none/gdprconsent@1.0.0/build/scripts/gdprconsent.min.js"></script>
 
 <!-- Other scripts below this point -->
 ```
 
 You should then include our default stylesheet using the following snippet:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/b3none/gdprconsent@1.0.0/build/" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/b3none/gdprconsent@1.0.0/build/styles/gdprconsent.min.css" />
 ```
 
 OR

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../build/styles/gdprconsent.min.css">
 </head>
 <body>
-    <p>Page loaded</p>
+    <p>Here's an example page</p>
 
     <script>
       window.gdprconsent = {
@@ -18,11 +18,11 @@
             description: 'We send data to google analytics to track the number of users visiting our site.',
             disable: function() {
               // Optional code to disable the functionality
-              console.log('disabled google')
+              console.log('Disabled Google Analytics')
             },
             enable: function() {
               // Optional code to enable the functionality
-              console.log('enabled google')
+              console.log('Enabled Google Analytics')
             },
           }
         ]
@@ -30,6 +30,10 @@
     </script>
     <script src="../build/scripts/gdprconsent.min.js"></script>
     <script>
+      var sidebar = document.createElement('p');
+      sidebar.innerText = "This was loaded in by other JavaScript loaded on the page.";
+      document.body.appendChild(sidebar);
+
       console.log('Other code loaded after the fact.');
     </script>
 </body>
