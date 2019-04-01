@@ -9,15 +9,15 @@ import webpackConfig from './webpack.config';
 const paths = {
   styles: {
     src: 'src/styles/**/*.scss',
-    dest: 'build/styles/'
+    dest: `build/styles/`
   },
   scripts: {
     src: 'src/scripts/**/*.js',
-    dest: 'build/scripts/'
+    dest: `build/scripts/`
   }
 };
 
-export const clean = (subDirectory = false) => del(['build' + (subDirectory ? '/' + subDirectory : '')]);
+export const clean = (subDirectory = false) => del([`build/${(subDirectory ? '/' + subDirectory : '')}`]);
 
 export function styles() {
   return gulp.src(paths.styles.src)
@@ -47,6 +47,6 @@ function watchFiles() {
 
 export {watchFiles as watch};
 
-const build = gulp.series(clean, gulp.parallel(styles, scripts));
+export const build = gulp.series(clean, gulp.parallel(styles, scripts));
 
 export default watchFiles;

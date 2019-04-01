@@ -1,6 +1,9 @@
 # GDPR Consent
 A super flexible GDPR consent solution that, if implemented correctly, will make your site GDPR compliant.
 
+# Version
+The current version, `1.0.0`, is the initial proof of concept and is subject to substantial change.
+
 # Installation
 To install this project you will need to include the following code before all other scripts get loaded. If you do not do this then your site will not be able to be fully GDPR compliant as we cannot prevent other scripts from executing.
 ```html
@@ -17,7 +20,7 @@ To install this project you will need to include the following code before all o
 
 You should then include our default stylesheet using the following snippet:
 ```html
-<link rel="stylesheet" href="https://somecdn.com/" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/b3none/gdprconsent@1.0.0/build/" />
 ```
 
 OR

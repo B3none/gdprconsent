@@ -1,3 +1,5 @@
+# PHPStorm
 /.idea/
+
+# NPM
 /node_modules/
-/build/
