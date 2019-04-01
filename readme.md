@@ -53,6 +53,10 @@ To declare these settings you need to put a script tag above the library include
 </script>
 ```
 
+## Contributions
+
+We're happy to accept contributions so long as you're open to constructive criticism! Nobody is perfect!
+
 ## Versioning
 
 We use [SemVer](http://semver.org/). For the versions available, see the [tags on this repository](https://github.com/b3none/gdprconsent/tags). 
@@ -71,4 +75,4 @@ If you appreciate the project then please take the time to star our repository.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [project license](license.md) file for details
