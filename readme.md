@@ -2,16 +2,22 @@
 A super flexible GDPR consent solution that, if implemented correctly, will make your site GDPR compliant.
 
 # Installation
-To install this project you can simply include the following code before all other scripts get loaded. If you do not do this then your site will not be able to be fully GDPR compliant as we cannot prevent other scripts from executing.
+To install this project you will need to include the following code before all other scripts get loaded. If you do not do this then your site will not be able to be fully GDPR compliant as we cannot prevent other scripts from executing.
 ```html
 <!-- GDPR Consent -->
 <script>
-    // TODO: Implement config - https://github.com/b3none/gdprconsent#customisable-settings
+    // TODO: Implement config:
+    // https://github.com/b3none/gdprconsent#customisable-settings
     window.gdprconsent = {};
 </script>
 <script src="https://somecdn.com/"></script>
 
-<!-- Other scripts below this mark -->
+<!-- Other scripts below this point -->
+```
+
+You should then include our default stylesheet using the following snippet:
+```html
+<link rel="stylesheet" href="https://somecdn.com/" />
 ```
 
 OR
