@@ -3,7 +3,7 @@ const defaultConfig = {
   is_new: true
 };
 
-class Config {
+class Storage {
   constructor() {
     if (localStorage.getItem(storageKey) === null) {
       this.set(defaultConfig);
@@ -68,4 +68,4 @@ class Config {
   }
 }
 
-export default Config;
+export default Storage;

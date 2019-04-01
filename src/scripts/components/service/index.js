@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Switch from 'react-switch';
-import Config from '../../config';
+import Storage from '../../storage';
+
+const storage = new Storage();
 
 const styles = {
   serviceDescription: {
@@ -15,12 +17,18 @@ class Service extends Component {
   constructor(props) {
     super(props);
 
-    this.config = new Config();
-
     this.props = props;
 
+    let config = storage.get();
+
+    if (config[this.props.storage_key] === undefined) {
+      const update = {};
+      update[this.props.storage_key] = false;
+      storage.update(update);
+    }
+
     this.state = {
-      checked: true
+      checked: config[this.props.storage_key]
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,8 +42,8 @@ class Service extends Component {
     }
 
     const update = {};
-    update[this.props.key] = this.state.checked;
-    this.config.update(update);
+    update[this.props.storage_key] = checked;
+    storage.update(update);
 
     this.setState({
       checked
