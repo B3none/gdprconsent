@@ -8,25 +8,25 @@ class Service extends Component {
 
     let config = Storage.get();
 
-    if (config[this.props.storage_key] === undefined) {
-      const update = {};
-      update[this.props.storage_key] = false;
-      Storage.update(update);
-    }
+    this.runCallbacks(config[this.props.storage_key] || false);
 
     this.state = {
-      checked: config[this.props.storage_key]
+      checked: config[this.props.storage_key] || false
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(checked) {
-    if (this.state.checked) {
+  runCallbacks(isChecked) {
+    if (isChecked) {
       this.props.disable();
     } else {
       this.props.enable();
     }
+  }
+
+  handleChange(checked) {
+    this.runCallbacks(this.state.checked);
 
     const update = {};
     update[this.props.storage_key] = checked;
