@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./header";
-import GDPRService from "../service";
+import Service from "../service";
 import Storage from "../../storage";
 
 const userConfig = window.gdprconsent || {};
@@ -52,7 +52,7 @@ const Content = props => {
     );
 
     services.push(
-      <GDPRService {...userServices[i]} />
+      <Service {...userServices[i]} />
     );
   }
 
