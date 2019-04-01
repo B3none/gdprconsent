@@ -27,7 +27,6 @@ class GDPRSidebar extends Component {
   }
 
   render() {
-    console.log(this.props.isNew);
     const sidebar = <Content {...this.props} />;
 
     return(
