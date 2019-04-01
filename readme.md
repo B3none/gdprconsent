@@ -14,10 +14,10 @@ To declare these settings you need to put a script tag above the library include
         storage_key: '<ANY_KEY_YOU_WANT>',
         title: '<TITLE_IN_SIDEBAR>',
         disable: function() {
-          // Optional code to disable the functionality
+          // Callback used to disable the functionality
         },
         enable: function() {
-          // Optional code to enable the functionality
+          // Callback to enable the functionality
         },
       }
     ]
