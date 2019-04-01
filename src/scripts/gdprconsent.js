@@ -16,7 +16,6 @@ new class GDPRConsent {
     ReactDOM.render(<GDPRSidebar isNew={isNew} />, document.getElementById(GDPRSidebar.divId));
 
     if (isNew) {
-      console.error('New client. Do not load any proceeding scripts!');
       window.stop();
     }
   }

@@ -4,12 +4,6 @@ const defaultConfig = {
 };
 
 class Storage {
-  constructor() {
-    if (localStorage.getItem(storageKey) === null) {
-      this.set(defaultConfig);
-    }
-  }
-
   /**
    * Get the localStorage key.
    *
@@ -35,7 +29,7 @@ class Storage {
    */
   static get() {
     const stored = localStorage.getItem(storageKey);
-    return JSON.parse(stored);
+    return JSON.parse(stored) || (this.clear() && defaultConfig);
   }
 
   /**
