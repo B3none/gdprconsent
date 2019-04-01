@@ -1,6 +1,9 @@
 # GDPR Consent
 A super flexible GDPR consent solution that, if implemented correctly, will make your site GDPR compliant.
 
+
+What can you tell me about GDPR? [This blog post](https://www.wired.co.uk/article/what-is-gdpr-uk-eu-legislation-compliance-summary-fines-2018) does an exceptional job at explaining it.
+
 ## User Disclaimer
 The current version, `1.0.0`, is the initial proof of concept and is subject to substantial change. As such we recommend that you watch the repository for releases:
 
