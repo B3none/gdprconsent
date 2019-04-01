@@ -33,7 +33,7 @@ class Storage {
    *
    * @returns {object}
    */
-  get() {
+  static get() {
     const stored = localStorage.getItem(storageKey);
     return JSON.parse(stored);
   }
@@ -44,7 +44,7 @@ class Storage {
    * @param {object|null} newConfig
    * @return {void}
    */
-  set(newConfig) {
+  static set(newConfig) {
     localStorage.setItem(storageKey, JSON.stringify(newConfig));
   }
 
@@ -54,7 +54,7 @@ class Storage {
    * @param {object} newConfig
    * @return {void}
    */
-  update(newConfig) {
+  static update(newConfig) {
     this.set({...this.get(), ...newConfig});
   }
 
@@ -63,7 +63,7 @@ class Storage {
    *
    * @return {void}
    */
-  clear() {
+  static clear() {
     this.set(defaultConfig);
   }
 }

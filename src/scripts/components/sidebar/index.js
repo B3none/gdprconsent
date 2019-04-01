@@ -27,12 +27,19 @@ class GDPRSidebar extends Component {
   }
 
   render() {
-    const sidebar = <Content />;
+    console.log(this.props.isNew);
+    const sidebar = <Content {...this.props} />;
 
     return(
       <Sidebar
+        styles={
+          {
+            sidebar: {
+              width: this.props.isNew ? '100%' : '300px'
+            }
+          }
+        }
         sidebar={sidebar}
-
         open={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen}
       >

@@ -2,20 +2,16 @@ import React, { Component } from 'react';
 import Switch from 'react-switch';
 import Storage from '../../storage';
 
-const storage = new Storage();
-
 class Service extends Component {
   constructor(props) {
     super(props);
 
-    this.props = props;
-
-    let config = storage.get();
+    let config = Storage.get();
 
     if (config[this.props.storage_key] === undefined) {
       const update = {};
       update[this.props.storage_key] = false;
-      storage.update(update);
+      Storage.update(update);
     }
 
     this.state = {
@@ -34,7 +30,7 @@ class Service extends Component {
 
     const update = {};
     update[this.props.storage_key] = checked;
-    storage.update(update);
+    Storage.update(update);
 
     this.setState({
       checked

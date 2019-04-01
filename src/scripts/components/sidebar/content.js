@@ -3,14 +3,12 @@ import Header from "./header";
 import Service from "../service";
 import Storage from "../../storage";
 
-const storage = new Storage();
-
 const userConfig = window.gdprconsent || {};
 const userServices = userConfig.services || [];
 
 const styles = {
   sidebar: {
-    width: "300px",
+    // width: this.props.isNew ? '100%' : '300px',
     height: "100%",
     background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
   },
@@ -32,9 +30,9 @@ const styles = {
   }
 };
 
-const Content = (props, isNew) => {
+const Content = props => {
   const acceptInitialSettings = () => {
-    storage.update({
+    Storage.update({
       is_new: false,
       accepted: + new Date()
     });
@@ -59,7 +57,7 @@ const Content = (props, isNew) => {
     );
   }
 
-  if (isNew) {
+  if (props.isNew) {
     services.push(
       <div style={{textAlign: "center"}}>
         <button onClick={acceptInitialSettings} className="gdprconsent-accept">
