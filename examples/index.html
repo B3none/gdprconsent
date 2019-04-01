@@ -30,9 +30,9 @@
     </script>
     <script src="../build/scripts/gdprconsent.min.js"></script>
     <script>
-      var sidebar = document.createElement('p');
-      sidebar.innerText = "This paragraph was loaded in by other JavaScript loaded on the page.";
-      document.body.appendChild(sidebar);
+      var p = document.createElement('p');
+      p.innerText = "This paragraph was loaded in by other JavaScript loaded on the page.";
+      document.body.appendChild(p);
 
       console.log('Other code loaded after the fact.');
     </script>
