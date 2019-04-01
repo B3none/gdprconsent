@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Switch from 'react-switch';
 import Storage from '../../storage';
 
-class Service extends Component {
+class GDPRService extends Component {
   constructor(props) {
     super(props);
 
@@ -57,4 +57,4 @@ class Service extends Component {
   }
 }
 
-export default Service;
+export default GDPRService;

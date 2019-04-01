@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./header";
-import Service from "../service";
+import GDPRService from "../service";
 import Storage from "../../storage";
 
 const userConfig = window.gdprconsent || {};
@@ -8,7 +8,6 @@ const userServices = userConfig.services || [];
 
 const styles = {
   sidebar: {
-    // width: this.props.isNew ? '100%' : '300px',
     height: "100%",
     background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
   },
@@ -53,7 +52,7 @@ const Content = props => {
     );
 
     services.push(
-      <Service {...userServices[i]} />
+      <GDPRService {...userServices[i]} />
     );
   }
 
