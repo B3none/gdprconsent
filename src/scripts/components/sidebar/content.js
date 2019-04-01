@@ -1,7 +1,5 @@
 import React from "react";
 import Header from "./header";
-import Switch from "react-switch";
-import Config from "../../config";
 import Service from "../service";
 
 const userConfig = window.gdprconsent || {};
@@ -44,7 +42,10 @@ const Content = props => {
   const services = [];
 
   for (let i = 0; i < userServices.length; i++) {
-    console.log(userServices[i]);
+    services.push(
+      <div style={styles.divider} />
+    );
+
     services.push(
       <Service {...userServices[i]} />
     );
@@ -56,7 +57,6 @@ const Content = props => {
         <p style={styles.sidebarDescription}>
           This is the panel where you've got complete control to decide who we do and don't send your data to.
         </p>
-        <div style={styles.divider} />
         {services}
       </div>
     </Header>

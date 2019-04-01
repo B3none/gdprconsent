@@ -2,9 +2,20 @@ import React, { Component } from 'react';
 import Switch from 'react-switch';
 import Config from '../../config';
 
+const styles = {
+  serviceDescription: {
+    display: "block",
+    color: "#757575",
+    textDecoration: "none"
+  }
+};
+
+
 class Service extends Component {
   constructor(props) {
     super(props);
+
+    this.config = new Config();
 
     this.props = props;
 
@@ -17,14 +28,14 @@ class Service extends Component {
 
   handleChange(checked) {
     if (this.state.checked) {
-      this.props.enable();
-    } else {
       this.props.disable();
+    } else {
+      this.props.enable();
     }
 
     const update = {};
     update[this.props.key] = this.state.checked;
-    Config.update(update);
+    this.config.update(update);
 
     this.setState({
       checked
@@ -34,15 +45,16 @@ class Service extends Component {
   render() {
     return(
       <div id={this.props.key}>
-        <h3 style={/*styles.sidebarLink*/}>
+        <h3>
           {this.props.title}
+
+          <Switch
+            onChange={this.handleChange}
+            checked={this.state.checked}
+            className="gdprconsent-switch"
+          />
         </h3>
-        <Switch
-          onChange={this.handleChange}
-          checked={this.state.checked}
-          className="gdprconsent-switch"
-        />
-        <p style={styles.sidebarDescription}>
+        <p style={styles.serviceDescription}>
           {this.props.description}
         </p>
       </div>
