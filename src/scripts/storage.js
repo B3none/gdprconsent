@@ -28,8 +28,9 @@ class Storage {
    * @returns {object}
    */
   static get() {
-    const stored = localStorage.getItem(storageKey);
-    return JSON.parse(stored) || (this.clear() && defaultConfig);
+    let stored = localStorage.getItem(storageKey);
+    stored = JSON.parse(stored);
+    return stored === null ? defaultConfig : stored;
   }
 
   /**
