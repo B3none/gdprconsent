@@ -29,7 +29,13 @@ export function styles() {
 
 export function scripts() {
   return gulp.src(paths.scripts.src, {sourcemaps: true})
-    .pipe(webpack(webpackConfig))
+    .pipe(
+      webpack(webpackConfig)
+        .on('error', (err) => {
+          console.log(err.message);
+          this.emit('end'); // Recover from errors
+        })
+    )
     .pipe(concat('gdprconsent.min.js'))
     .pipe(gulp.dest(paths.scripts.dest));
 }
