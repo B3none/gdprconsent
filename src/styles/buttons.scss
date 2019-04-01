@@ -20,7 +20,11 @@
   }
 }
 
-.gdprconsent-switch {
-  vertical-align: middle;
-  margin: 0 20px;
+.gdprconsent-accept {
+  background: rgb(0, 136, 0);
+  color: rgb(255,255,255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15pt;
 }

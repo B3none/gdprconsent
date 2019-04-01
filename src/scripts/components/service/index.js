@@ -4,15 +4,6 @@ import Storage from '../../storage';
 
 const storage = new Storage();
 
-const styles = {
-  serviceDescription: {
-    display: "block",
-    color: "#757575",
-    textDecoration: "none"
-  }
-};
-
-
 class Service extends Component {
   constructor(props) {
     super(props);
@@ -52,17 +43,17 @@ class Service extends Component {
 
   render() {
     return(
-      <div id={this.props.key}>
+      <div id={this.props.key} className='gdprconsent-service'>
         <h3>
           {this.props.title}
 
           <Switch
             onChange={this.handleChange}
             checked={this.state.checked}
-            className="gdprconsent-switch"
+            className="switch"
           />
         </h3>
-        <p style={styles.serviceDescription}>
+        <p className="description">
           {this.props.description}
         </p>
       </div>

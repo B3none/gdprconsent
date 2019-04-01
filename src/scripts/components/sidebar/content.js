@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "./header";
 import Service from "../service";
+import Storage from "../../storage";
+
+const storage = new Storage();
 
 const userConfig = window.gdprconsent || {};
 const userServices = userConfig.services || [];
@@ -10,11 +13,6 @@ const styles = {
     width: "300px",
     height: "100%",
     background: userConfig.sidebarBackground || "rgb(33, 37, 41)"
-  },
-  serviceTitle: {
-    display: "block",
-    color: "#757575",
-    textDecoration: "none"
   },
   sidebarDescription: {
     margin: 0,
@@ -29,12 +27,22 @@ const styles = {
   },
   content: {
     padding: "16px",
-    "min-height": "88vh",
+    minHeight: "88vh",
     backgroundColor: "white"
   }
 };
 
-const Content = props => {
+const Content = (props, isNew) => {
+  const acceptInitialSettings = () => {
+    storage.update({
+      is_new: false,
+      accepted: + new Date()
+    });
+
+    // A little poor but this can be re-worked at a later date.
+    window.location.reload();
+  };
+
   const style = props.style
     ? { ...styles.sidebar, ...props.style }
     : styles.sidebar;
@@ -48,6 +56,16 @@ const Content = props => {
 
     services.push(
       <Service {...userServices[i]} />
+    );
+  }
+
+  if (isNew) {
+    services.push(
+      <div style={{textAlign: "center"}}>
+        <button onClick={acceptInitialSettings} className="gdprconsent-accept">
+          Accept settings
+        </button>
+      </div>
     );
   }
 
