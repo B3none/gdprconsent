@@ -1,10 +1,12 @@
 # GDPR Consent
 A super flexible GDPR consent solution that, if implemented correctly, will make your site GDPR compliant.
 
-# Version
-The current version, `1.0.0`, is the initial proof of concept and is subject to substantial change.
+## User Disclaimer
+The current version, `1.0.0`, is the initial proof of concept and is subject to substantial change. As such we recommend that you watch the repository for releases:
 
-# Installation
+![Watch for releases](.github/README_ASSETS/watch_releases.png)
+
+## Installation
 To install this project you will need to include the following code before all other scripts get loaded. If you do not do this then your site will not be able to be fully GDPR compliant as we cannot prevent other scripts from executing.
 ```html
 <!-- GDPR Consent -->
@@ -27,7 +29,7 @@ OR
 
 If the use of CDNs really isn't your style then please download the [latest release](https://github.com/b3none/gdprconsent/releases/latest) and replace the CDN urls with your own hosted version.
 
-# Customisable settings
+## Customisable settings
 This project allows you to specify custom settings.
 To declare these settings you need to put a script tag above the library include containing the following:
 ```html
@@ -51,3 +53,22 @@ To declare these settings you need to put a script tag above the library include
 </script>
 ```
 
+## Versioning
+
+We use [SemVer](http://semver.org/). For the versions available, see the [tags on this repository](https://github.com/b3none/gdprconsent/tags). 
+
+## Authors
+
+* **Alex Blackham** - *Developer and Maintainer* - [B3none](https://github.com/b3none)
+
+See also the list of [contributors](https://github.com/b3none/gdprconsent/contributors) who participated in this project.
+
+## Share the love
+
+If you appreciate the project then please take the time to star our repository.
+
+![Star us](.github/README_ASSETS/star_us.png)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
