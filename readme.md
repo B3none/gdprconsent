@@ -20,12 +20,12 @@ To install this project you will need to include the following code before all o
 <!-- Other scripts below this point -->
 ```
 
-You should then include our default stylesheet using the following snippet:
+You should also include our default stylesheet using the following snippet:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/b3none/gdprconsent@1.0.0/build/styles/gdprconsent.min.css" />
 ```
 
-OR
+#### *OR*
 
 If the use of CDNs really isn't your style then please download the [latest release](https://github.com/b3none/gdprconsent/releases/latest) and replace the CDN urls with your own hosted version.
 
