@@ -20,9 +20,10 @@ class Service extends Component {
   runCallbacks(isChecked) {
     if (isChecked) {
       this.props.disable();
-    } else {
-      this.props.enable();
+      return;
     }
+
+    this.props.enable();
   }
 
   handleChange(checked) {
