@@ -38,8 +38,6 @@ To declare these settings you need to put a script tag above the library include
 ```html
 <script>
   window.gdprconsent = {
-    sidebarBackground: "<ANY_CSS_COLOUR_VALUE>",
-    sidebarTitleTextColour: "<ANY_CSS_COLOUR_VALUE>",
     services: [
       {
         storage_key: '<ANY_KEY_YOU_WANT>',
