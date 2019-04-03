@@ -8,11 +8,11 @@ class Service extends Component {
 
     let config = Storage.get();
 
-    this.runCallbacks(config[this.props.storage_key] || false);
-
     this.state = {
       checked: config[this.props.storage_key] || false
     };
+
+    this.runCallbacks(this.state.checked);
 
     this.handleChange = this.handleChange.bind(this);
   }
